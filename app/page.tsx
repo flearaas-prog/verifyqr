@@ -14,7 +14,7 @@ export default function Home() {
         <p className="subtitle">
           Secure QR Verification Platform
         </p>
-        
+    
 
         <Link href="/login" className="button">
           Admin Login

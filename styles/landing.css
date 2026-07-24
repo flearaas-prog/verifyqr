@@ -114,60 +114,51 @@
 }
 
 /* CTA Button */
-.landing-login-btn {
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 100%;
-  max-width: 320px;
+  width: 260px;
+  height: 56px;
 
-  margin: 30px auto 0;
-  padding: 16px 24px;
+  margin: 32px auto;
 
-  background: #ffffff;
-  color: #071114;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff !important;
 
-  border: 2px solid #ffffff;
+  border: none;
   border-radius: 14px;
 
+  text-decoration: none;
   font-size: 18px;
   font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.18);
 
   cursor: pointer;
-  transition: all 0.25s ease;
+
+  box-shadow: 0 8px 25px rgba(34,197,94,.35);
+
+  transition: all .25s ease;
 }
 
-.landing-login-btn::after {
-  content: "→";
-  margin-left: 10px;
-  font-size: 20px;
-  transition: transform 0.25s ease;
+.button  {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(34,197,94,.45);
 }
 
-.landing-login-btn:hover {
-  background: transparent;
-  color: #ffffff;
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 12px 30px rgba(255,255,255,0.22),
-    0 0 20px rgba(255,255,255,0.18);
+.button :active {
+  transform: scale(.98);
 }
 
-.landing-login-btn:hover::after {
-  transform: translateX(6px);
+.button ::after {
+  content: " →";
+  margin-left: 8px;
+  transition: .25s;
 }
 
-.landing-login-btn:active {
-  transform: translateY(0) scale(0.98);
+.button :hover::after {
+  margin-left: 14px;
 }
-
 /* Footer text */
 .landing-footer {
   color: #475569;

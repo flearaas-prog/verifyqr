@@ -69,8 +69,8 @@ export function RecentScans({
                   <td>{scan.user_email ?? "Unknown"}</td>
 
                   <td>{scan.source}</td>
-
-                  <td>{scan.id.slice(0, 8)}...</td>
+                  
+                  <td>{String(scan.id).slice(0, 8)}...</td>
 
                 </tr>
 

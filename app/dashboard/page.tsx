@@ -80,6 +80,11 @@ export default function DashboardPage() {
               getRecentFraudLogs(20)
 
           ]);
+            console.log("Total:", nextCount);
+            console.log("Recent:", nextScans);
+            console.log("Today:", nextToday);
+            console.log("Week:", nextWeek);
+            console.log("Fraud:", nextFrauds);
 
           setCount(nextCount);
 
@@ -126,7 +131,7 @@ export default function DashboardPage() {
               <div>
 
                   <p className="dashboard-kicker">
-                      VERIFYQR ADMIN
+                      Flearaas Admin Dashboard
                   </p>
 
                   <h1>
@@ -141,20 +146,17 @@ export default function DashboardPage() {
 
               <div className="dashboard-actions">
 
-                  <button
-                      className="button secondary"
-                      onClick={load}
-                  >
+            <button
+                className="button secondary"
+                onClick={load}
+            >
+                <RefreshCw size={18}/>
+                Refresh
+            </button>
 
-                      <RefreshCw size={18}/>
+            <ExportButton variant="secondary" />
 
-                      Refresh
-
-                  </button>
-
-                  <ExportButton/>
-
-              </div>
+        </div>
 
           </div>
 

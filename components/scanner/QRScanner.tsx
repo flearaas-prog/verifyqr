@@ -8,6 +8,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase/client';
 import { ExportButton } from '@/components/ExportButton';
+import Link from "next/link";
 
 export default function QRScanner() {
   const [result, setResult] = useState<'success' | 'error' | null>(null);
@@ -94,16 +95,47 @@ export default function QRScanner() {
           <span>FlearaasQR</span>
         </div>
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <ExportButton />
-          <button className="scanner-logout-btn" onClick={handleSignOut}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-              <polyline points="16 17 21 12 16 7" />
-              <line x1="21" y1="12" x2="9" y2="12" />
-            </svg>
-            <span>Sign Out</span>
-          </button>
-        </div>
+
+  <button
+    className="scanner-logout-btn"
+    onClick={() => router.push("/dashboard")}
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="3" width="7" height="7" />
+      <rect x="14" y="3" width="7" height="7" />
+      <rect x="3" y="14" width="7" height="7" />
+      <rect x="14" y="14" width="7" height="7" />
+    </svg>
+    <span>Dashboard</span>
+  </button>
+
+  <button
+    className="scanner-logout-btn"
+    onClick={handleSignOut}
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
+    </svg>
+    <span>Sign Out</span>
+  </button>
+
+</div>
       </div>
 
       {/* Camera area */}

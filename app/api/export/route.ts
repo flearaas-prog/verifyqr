@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
 
   return new NextResponse([header.join(","), ...rows].join("\n"), {
     headers: {
-      "Content-Disposition": "attachment; filename=verification-history.csv",
+      "Content-Disposition": "attachment; filename=FlearaasReport.csv",
       "Content-Type": "text/csv; charset=utf-8",
     },
   });

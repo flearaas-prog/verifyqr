@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuth } from "@/context/AuthContext";
-import { Download } from "lucide-react";
+import { FileSpreadsheet } from "lucide-react";
 import { useState } from "react";
 
 export function ExportButton({ variant = "primary" }: { variant?: "primary" | "secondary" }) {
@@ -25,7 +25,7 @@ export function ExportButton({ variant = "primary" }: { variant?: "primary" | "s
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.download = "verification-history.csv";
+      link.download = "FlearaasReport.csv";
       link.click();
       URL.revokeObjectURL(url);
     } finally {
@@ -35,12 +35,12 @@ export function ExportButton({ variant = "primary" }: { variant?: "primary" | "s
 
   return (
     <button
-      className={`button ${variant === "secondary" ? "secondary" : ""}`}
+      className="dashboard-download-btn"
       disabled={loading}
       onClick={downloadCsv}
       type="button"
     >
-      <Download size={18} />
+      <FileSpreadsheet size={18} />
       {loading ? "Exporting..." : "CSV"}
     </button>
   );
